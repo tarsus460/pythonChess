@@ -61,9 +61,10 @@ for k,v in chessBoard1.items():
         
  #game begins here. White moves first
  
-turn = 'white'
+turn = 'w'
  
-while turn == 'white':
+while turn == 'w':
     pieceToMove = input('Which piece would you like to move?')
     space = input('Where would you like to move it?')
     chessBoard1[space] = pieceToMove
+    turn = 'b'
