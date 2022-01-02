@@ -9,58 +9,17 @@ chessBoard1 = {
                 }
 #TODO: setup logfile system
 
-piecesNeeded ={
-'pawn': 8,
-'rook': 2,
-'knight': 2,
-'bishop': 2,
-'king': 1,
-'queen': 1
-}
 
-whitePieces = {
-    'pawn':0,
-    'rook':0,
-    'knight':0,
-    'bishop':0,
-    'king':0,
-    'queen':0
-}
-
-blackPieces = {
-    'pawn':0,
-    'rook':0,
-    'knight':0,
-    'bishop':0,
-    'king':0,
-    'queen':0
-}
-
-#checks to makes sure each side has the correct number of pieces (16 per side)
-whitePiecesCount = 0
-blackPiecesCount = 0
-
-for k,v in chessBoard1.items():
-    if v.startswith('w'):
-        whitePiecesCount += 1
-    if v.startswith('b'):
-        blackPiecesCount += 1
-if blackPiecesCount == 16 and whitePiecesCount == 16:
-    print(f'OK: number of pieces is {whitePiecesCount + blackPiecesCount}')
-else:
-    if whitePiecesCount != 16:
-        print('ERROR: White has ' + str(whitePiecesCount) + ' pieces.')
-    if blackPiecesCount != 16:
-        print('ERROR: Black has ' + str(blackPiecesCount) + ' pieces.')
-        
-for k,v in chessBoard1.items():
-    if v.startswith('w'):
-        whitePieces[str(v)[1:]] += 1
-    if v.startswith('b'):
-        blackPieces[str(v)[1:]] += 1
-        
- #game begins here. White moves first
  
+def moveCheck(turn,piece,origin,destination):
+    if turn == 'w':
+        #add to key index 1
+        if piece.startswith(turn+'pawn'):
+            piece
+    elif turn == 'b':
+        #subtract from key index 1
+
+#game begins here. White moves first 
 turn = 'w'
  
 while turn == 'w':
