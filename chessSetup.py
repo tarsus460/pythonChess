@@ -7,7 +7,7 @@ chessBoard1 = {
     'h8':'brook','a7':'bpawn','b7':'bpawn','c7':'bpawn','d7':'bpawn','e7':'bpawn','f7':'bpawn','g7':'bpawn',
     'h7':'bpawn'
                 }
-TODO: setup logfile system
+#TODO: setup logfile system
 
 piecesNeeded ={
 'pawn': 8,
@@ -53,7 +53,7 @@ else:
     if blackPiecesCount != 16:
         print('ERROR: Black has ' + str(blackPiecesCount) + ' pieces.')
         
- for k,v in chessBoard1.items():
+for k,v in chessBoard1.items():
     if v.startswith('w'):
         whitePieces[str(v)[1:]] += 1
     if v.startswith('b'):
@@ -61,9 +61,9 @@ else:
         
  #game begins here. White moves first
  
- turn = 'white'
+turn = 'white'
  
- while turn == 'white':
+while turn == 'white':
     pieceToMove = input('Which piece would you like to move?')
     space = input('Where would you like to move it?')
     chessBoard1[space] = pieceToMove
