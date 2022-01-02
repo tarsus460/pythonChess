@@ -18,6 +18,9 @@ def moveCheck(turn,piece,destination):
                     print('You cannae move it there')
                 print('Moving '+ v + ' at '+ k+ ' to ' + destination)
 
+def captureCheck(turn,piece,destination):
+    break
+
 #game begins here. White moves first 
 turn = 'w'
  
