@@ -17,6 +17,11 @@ def moveCheck(pieceToMove,destination):
                 if destination[0] != originSpace[0] and destination[1] != str(int(originSpace[1]) +1): #the pawn must stay in the same column(destination[0]) and can only move forward 1 space
                     print('You can\'t move it there')
                     return False
+            #if originPiece[1:-1] == 'rook':
+            #if originPiece[1:-1] == 'knight':
+            #if originPiece[1:-1] == 'bishop':
+            #if originPiece[1:-1] == 'queen':
+            #if originPiece[1:-1] == 'king':
             print('Moving '+ originPiece + ' at '+ originSpace+ ' to ' + destination)
 
 #def captureCheck(turn,piece,destination):
