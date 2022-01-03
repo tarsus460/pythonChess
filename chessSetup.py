@@ -10,23 +10,28 @@ chessBoard1 = {
     'a8':'brook1','b8':'bknight1','c8':'bbishop1','d8':'bking1','e8':'bqueen1','f8':'bbishop2','g8':'bknight2','h8':'brook2',
                 }
  
-def moveCheck(turn,piece,destination):
-    for k,v in chessBoard1.items():
-        if v.startswith(turn+piece):
-            if v[1:-1] == 'pawn':
-                if destination[0] != k[0] and destination[1] != str(int(k[1]) +1):
-                    print('You cannae move it there')
-                print('Moving '+ v + ' at '+ k+ ' to ' + destination)
+def moveCheck(pieceToMove,destination):
+    for originSpace,originPiece in chessBoard1.items():
+        if originPiece == pieceToMove:
+            if originPiece[1:-1] == 'pawn':
+                if destination[0] != originSpace[0] and destination[1] != str(int(originSpace[1]) +1): #the pawn must stay in the same column(destination[0]) and can only move forward 1 space
+                    print('You can\'t move it there')
+                    return False
+            print('Moving '+ originPiece + ' at '+ originSpace+ ' to ' + destination)
 
-def captureCheck(turn,piece,destination):
-    break
+#def captureCheck(turn,piece,destination):
 
 #game begins here. White moves first 
 turn = 'w'
  
 while turn == 'w':
-    pieceToMove = input('Which piece would you like to move?')
+    pieceToMove = turn + input('Which piece would you like to move?')
     destination = input('Where would you like to move it?')
-    moveCheck(turn,pieceToMove,destination)
+    if chessBoard1[destination] == ' ':
+        moveCheck(pieceToMove,destination)
+        if moveCheck(pieceToMove,destination) == False:
+            continue
+    #elif chessBoard1[destination] != ' ':
+    #    captureCheck(turn,piece,destination)
 #    chessBoard1[destination] = pieceToMove
     turn = 'b'
