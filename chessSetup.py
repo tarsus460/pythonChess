@@ -14,7 +14,7 @@ def moveCheck(pieceToMove,destination):
     for originSpace,originPiece in chessBoard1.items():
         if originPiece == pieceToMove:
             if originPiece[1:-1] == 'pawn':
-                if destination[0] != originSpace[0] and destination[1] != str(int(originSpace[1]) +1): #the pawn must stay in the same column(destination[0]) and can only move forward 1 space
+                if destination[0] != originSpace[0] or destination[1] > str(int(originSpace[1]) +1): #the pawn must stay in the same column(destination[0]) and can only move forward 1 space
                     print('You can\'t move it there')
                     return False
             #if originPiece[1:-1] == 'rook':
